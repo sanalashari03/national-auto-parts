@@ -10,19 +10,19 @@ Check out the live website here: [https://deepskyblue-spider-361301.hostingersit
 ## 📸 Screenshots
 
 ### Home Page - Hero Section
-![Hero Section](screenshots/hero.png)
+![Hero Section](screenshots/home.JPG)
 
 ### The NAPCO Advantage
-![Advantages](screenshots/advantages.png)
+![Advantages](screenshots/advantage.JPG)
 
 ### Premium Parts Collection
-![Products](screenshots/products.png)
+![Products](screenshots/collection.JPG)
 
 ### About Us
-![About Us](screenshots/about.png)
+![About Us](screenshots/about.JPG)
 
 ### Contact & Location
-![Contact](screenshots/contact.png)
+![Contact](screenshots/Contact.JPG)
 
 ---
 
