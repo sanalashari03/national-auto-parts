@@ -393,19 +393,23 @@ const HomePage = () => {
                   <h3 className="text-xl md:text-2xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
+                  <p className="text-gray-600 leading-relaxed">
                     {product.description}
                   </p>
-                  
-                  <div className="pt-4 border-t border-gray-100 mt-auto">
-                    <a href="#contact" className="w-full bg-navy text-white group-hover:bg-gold group-hover:text-navy font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]">
-                      Inquire Now
-                      <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
-                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Single Inquire Now button after all products */}
+          <div className="flex justify-center mt-12">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 bg-navy text-white hover:bg-gold hover:text-navy font-bold px-10 py-4 rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl active:scale-[0.98]"
+            >
+              Inquire Now
+              <ChevronRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
