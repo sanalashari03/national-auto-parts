@@ -52,7 +52,7 @@ apps/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/sanalashari03/national-auto-parts.git
+   git clone https://github.com/national-auto-parts.git
    ```
 
 2. **Install dependencies:**
