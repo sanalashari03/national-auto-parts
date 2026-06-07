@@ -60,6 +60,10 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        navy: "rgb(var(--navy) / <alpha-value>)",
+        gold: "rgb(var(--gold) / <alpha-value>)",
+        "dark-gray": "rgb(var(--dark-gray) / <alpha-value>)",
+        "light-gray": "rgb(var(--light-gray) / <alpha-value>)",
       },
       borderRadius: {
         lg: "var(--radius)",

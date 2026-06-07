@@ -2,13 +2,39 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="generator" content="Hostinger Horizons" />
+		<link rel="icon" type="image/webp" href="/images/7de99f05df3aff193c261d5c482d4b0c.webp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hostinger Horizons</title>
+		<title>NAPCO - National Auto Parts Co.</title>
+		<style>
+			body { margin: 0; background-color: #0b1c2c; }
+			.preloader {
+				position: fixed;
+				top: 0; left: 0; width: 100vw; height: 100vh;
+				background-color: #0b1c2c;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 9999;
+			}
+			.spinner {
+				width: 50px;
+				height: 50px;
+				border: 3px solid rgba(212, 160, 23, 0.2);
+				border-radius: 50%;
+				border-top-color: #d4a017;
+				animation: spin 1s ease-in-out infinite;
+			}
+			@keyframes spin {
+				to { transform: rotate(360deg); }
+			}
+		</style>
 	</head>
 	<body>
-		<div id="root"></div>
+		<div id="root">
+			<div class="preloader">
+				<div class="spinner"></div>
+			</div>
+		</div>
 		<script type="module" src="/src/main.jsx"></script>
 	</body>
 </html>

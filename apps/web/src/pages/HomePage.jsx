@@ -183,10 +183,10 @@ const HomePage = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+                  className={`px-4 py-2 rounded-full transition-all duration-300 font-bold ${
                     scrolled 
                       ? 'text-navy hover:bg-navy hover:text-white' 
-                      : 'text-white hover:bg-white/20 hover:text-gold'
+                      : 'text-navy hover:bg-navy hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -196,7 +196,7 @@ const HomePage = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-all duration-200 ${scrolled ? 'text-navy' : 'text-white bg-black/10 backdrop-blur-sm'}`}
+              className={`md:hidden p-2 rounded-lg transition-all duration-200 ${scrolled ? 'text-navy' : 'text-navy bg-white/30 backdrop-blur-sm'}`}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -228,7 +228,8 @@ const HomePage = () => {
           backgroundImage: 'url(https://media.cdn-jaguarlandrover.com/api/v2/images/105583/w/1216/h/684.jpg)'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/80 to-dark-gray/90"></div>
+        {/* Removed the dark gradient overlay to match the original live site look */}
+        <div className="absolute inset-0 bg-black/10"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 min-h-[100px] md:min-h-[160px] flex items-center justify-center leading-[1.1]" style={{ letterSpacing: '-0.02em', textBalance: 'balance' }}>
@@ -241,13 +242,13 @@ const HomePage = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+97165332233">
-              <Button className="bg-gold text-navy hover:bg-gold/90 font-semibold px-8 py-6 text-lg transition-all duration-200 active:scale-[0.98]">
+              <Button className="bg-gold text-navy hover:bg-white hover:text-navy font-semibold px-8 py-6 text-lg transition-all duration-200 active:scale-[0.98]">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Us Now
               </Button>
             </a>
             <a href="#products">
-              <Button variant="outline" className="border-2 border-gold text-black bg-gold hover:bg-black-100 font-semibold px-8 py-6 text-lg transition-all duration-200 active:scale-[0.98]">
+              <Button variant="outline" className="border-2 border-gold text-navy bg-gold hover:bg-white hover:border-white hover:text-navy font-semibold px-8 py-6 text-lg transition-all duration-200 active:scale-[0.98]">
                 Explore Products
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
@@ -380,32 +381,27 @@ const HomePage = () => {
                 ref={(el) => (observerRefs.current[4 + index] = el)}
                 className="fade-in group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
               >
-                <div className="relative aspect-square overflow-hidden bg-gray-50 p-12 flex items-center justify-center">
+                <div className="relative h-56 md:h-64 overflow-hidden bg-gray-50 p-6 flex items-center justify-center">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-navy/5 text-navy text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-sm border border-navy/10">
-                      Genuine Quality
-                    </span>
-                  </div>
                 </div>
 
-                <div className="p-6 md:p-8 flex flex-col flex-grow bg-white">
-                  <h3 className="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">
+                <div className="p-6 flex flex-col flex-grow bg-white">
+                  <h3 className="text-xl md:text-2xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
+                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
                     {product.description}
                   </p>
                   
-                  <div className="pt-6 border-t border-gray-100 mt-auto">
-                    <button className="w-full bg-navy text-white group-hover:bg-gold group-hover:text-navy font-bold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]">
+                  <div className="pt-4 border-t border-gray-100 mt-auto">
+                    <a href="#contact" className="w-full bg-navy text-white group-hover:bg-gold group-hover:text-navy font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]">
                       Inquire Now
                       <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -444,8 +440,8 @@ const HomePage = () => {
               >
                 <div className="mb-6 flex justify-center">
                   <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center border border-gold/20 group-hover:from-gold group-hover:to-gold/80 transition-all duration-500">
-                    <div className="text-gold group-hover:text-navy transition-colors duration-500 transform group-hover:scale-110">
-                      {React.cloneElement(feature.icon, { className: "w-10 h-10" })}
+                    <div className="transition-colors duration-500 transform group-hover:scale-110">
+                      {React.cloneElement(feature.icon, { className: "w-10 h-10 text-gold group-hover:text-navy transition-colors duration-500" })}
                     </div>
                   </div>
                 </div>
@@ -583,7 +579,13 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="text-gold text-2xl font-bold tracking-wider mb-2">NAPCO UAE</div>
+              <button onClick={scrollToTop} className="block cursor-pointer hover:opacity-80 transition-opacity duration-200">
+                <img
+                  src="/images/7de99f05df3aff193c261d5c482d4b0c.webp"
+                  alt="NAPCO - National Auto Parts Co."
+                  className="h-12 md:h-16 w-auto object-contain mb-4"
+                />
+              </button>
               <p className="text-gray-400 leading-relaxed">Your trusted Land Rover parts partner since 1963</p>
             </div>
 
