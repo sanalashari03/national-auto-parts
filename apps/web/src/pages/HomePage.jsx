@@ -75,9 +75,9 @@ const HomePage = () => {
 
   const Counter = ({ end, suffix = '' }) => {
     return (
-      <div className="text-4xl md:text-5xl font-bold text-gold">
+      <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-gold">
         {end.toLocaleString()}{suffix}
-      </div>
+      </span>
     );
   };
 
@@ -223,13 +223,13 @@ const HomePage = () => {
       </nav>
 
       <section
-        className="min-h-[100dvh] relative flex items-center justify-center bg-cover bg-center"
+        className="min-h-[100dvh] relative flex items-center justify-center bg-cover bg-[position:30%_center] md:bg-center"
         style={{
-          backgroundImage: 'url(https://media.cdn-jaguarlandrover.com/api/v2/images/105583/w/1216/h/684.jpg)'
+          backgroundImage: 'url(/images/hero-bg.jpg)'
         }}
       >
-        {/* Removed the dark gradient overlay to match the original live site look */}
-        <div className="absolute inset-0 bg-black/10"></div>
+        {/* Responsive overlay: darker on mobile for better text readability, lighter on desktop */}
+        <div className="absolute inset-0 bg-black/40 md:bg-black/10"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 min-h-[100px] md:min-h-[160px] flex items-center justify-center leading-[1.1]" style={{ letterSpacing: '-0.02em', textBalance: 'balance' }}>
@@ -259,22 +259,22 @@ const HomePage = () => {
 
       <section className="bg-dark-gray py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+            <div className="flex flex-row items-baseline justify-center gap-1.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-lg md:flex-col md:items-center md:p-6 md:rounded-3xl">
               <Counter end={65000} suffix="+" />
-              <div className="text-gray-300 mt-2 text-sm md:text-base font-medium">Parts</div>
+              <span className="text-gray-300 md:mt-2 text-xs sm:text-sm md:text-base font-medium">Parts</span>
             </div>
-            <div>
+            <div className="flex flex-row items-baseline justify-center gap-1.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-lg md:flex-col md:items-center md:p-6 md:rounded-3xl">
               <Counter end={50} suffix="+" />
-              <div className="text-gray-300 mt-2 text-sm md:text-base font-medium">Years</div>
+              <span className="text-gray-300 md:mt-2 text-xs sm:text-sm md:text-base font-medium">Years</span>
             </div>
-            <div>
+            <div className="flex flex-row items-baseline justify-center gap-1.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-lg md:flex-col md:items-center md:p-6 md:rounded-3xl">
               <Counter end={3} />
-              <div className="text-gray-300 mt-2 text-sm md:text-base font-medium">Branches</div>
+              <span className="text-gray-300 md:mt-2 text-xs sm:text-sm md:text-base font-medium">Branches</span>
             </div>
-            <div>
+            <div className="flex flex-row items-baseline justify-center gap-1.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/30 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 shadow-lg md:flex-col md:items-center md:p-6 md:rounded-3xl">
               <Counter end={1963} />
-              <div className="text-gray-300 mt-2 text-sm md:text-base font-medium">Est.</div>
+              <span className="text-gray-300 md:mt-2 text-xs sm:text-sm md:text-base font-medium">Est.</span>
             </div>
           </div>
         </div>
